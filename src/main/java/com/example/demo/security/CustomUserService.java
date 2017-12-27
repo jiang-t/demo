@@ -19,8 +19,7 @@ public class CustomUserService implements UserDetailsService {
         if (user == null) {
             throw new UsernameNotFoundException("用户名不存在");
         }
-        System.out.println("s:"+s);
         System.out.println("username:"+user.getUsername()+";password:"+user.getPassword());
-        return user;
+        return user;//返回UserDetails对象，会根据传入的password进行密码比对
     }
 }
